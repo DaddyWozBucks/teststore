@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151018102519) do
+ActiveRecord::Schema.define(version: 20151018135427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 20151018102519) do
     t.string   "title"
     t.string   "description"
     t.decimal  "price",       precision: 5, scale: 2
-    t.integer  "downloads"
-    t.integer  "rating"
     t.string   "url"
     t.string   "tags"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.integer  "downloads",                           default: 0
+    t.integer  "rating",                              default: 0
   end
 
   create_table "photos", force: :cascade do |t|
@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 20151018102519) do
     t.string   "title"
     t.string   "description"
     t.decimal  "price",       precision: 5, scale: 2
-    t.integer  "downloads"
-    t.integer  "rating"
     t.string   "url"
     t.string   "tags"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.integer  "downloads",                           default: 0
+    t.integer  "rating",                              default: 0
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,12 +65,12 @@ ActiveRecord::Schema.define(version: 20151018102519) do
     t.string   "title"
     t.string   "description"
     t.decimal  "price",       precision: 5, scale: 2
-    t.integer  "downloads"
-    t.integer  "rating"
     t.string   "url"
     t.string   "tags"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.integer  "downloads",                           default: 0
+    t.integer  "rating",                              default: 0
   end
 
 end
