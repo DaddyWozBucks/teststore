@@ -12,6 +12,7 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
+    @userphotos = Photo.find_by(id: current_user.id)
   end
 
   def show
