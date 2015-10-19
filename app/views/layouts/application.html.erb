@@ -11,8 +11,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="container-fluid">
-      <%= yield %>
-    </div>
+  <% if user_signed_in? %>
+      <ul class="navigation">
+        <li><img src="<%=current_user.photourl%>" alt="UserPic" class="img-circle"></li>
+        <ul>
+          <li class="nav-userinfo"> <span><%= current_user.first_name%> </span> <span><%= current_user.last_name %></span> </li>
+          <li class="nav-userinfo"> <span><%= current_user.balance %></span> </li>
+        </ul>
+        <li class="nav-item"><a href="<%=root_path%>">Home</a></li>
+        <li class="nav-item"><a href="<%=videos_path%>">Video</a></li>
+        <li class="nav-item"><a href="<%=photos_path%>">Photos</a></li>
+        <li class="nav-item"><a href="<%=audios_path%>">Blog</a></li>
+        <li class="nav-item"><a href="<%=account_path%>">Account</a></li>
+      </ul>
+  <% else %>
+    <ul class="navigation">
+      <li class="nav-item"><a href="<%=new_user_session_path%>">Sign In!</a></li>
+      <li class="nav-item"><a href="<%=new_user_registration_path%>">Join Us!</a></li>
+      <li class="nav-item disabled"><a href="<%=root_path%>">Home</a></li>
+      <li class="nav-item disabled"><a href="<%=videos_path%>">Video</a></li>
+      <li class="nav-item disabled"><a href="<%=photos_path%>">Photos</a></li>
+      <li class="nav-item disabled"><a href="<%=audios_path%>">Blog</a></li>
+      <li class="nav-item disabled"><a href="<%=account_path%>">Account</a></li>
+    </ul>
+  <% end %>
+
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger"></label>
+
+  <div class="site-wrap">
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+  </div>
 </body>
 </html>

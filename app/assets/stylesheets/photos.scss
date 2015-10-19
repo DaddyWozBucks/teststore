@@ -1,3 +1,74 @@
 // Place all the styles related to the Photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.photobox__price {
+  margin: auto;
+
+}
+
+.photobox__content {
+  max-height: 60%;
+}
+.photobox__text {
+  background-color: #f5f5f5;
+}
+.photobox__title {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem
+}
+.photobox__description {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.photoflip-container {
+	perspective: 1000;
+  margin-left: 5px;
+  margin-top: 5px;
+  float: left;
+}
+	/* flip the pane when hovered */
+	.photoflip-container:hover .photoflipper, .photoflip-container.hover .photoflipper {
+		transform: rotateY(180deg);
+	}
+
+.photoflip-container, .photofront, .photoback {
+	width: 320px;
+	height: 180px;
+}
+
+/* flip speed goes here */
+.photoflipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.photofront, .photoback {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.photofront {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* back, initially hidden pane */
+.photoback {
+	transform: rotateY(180deg);
+  background-color: rgba(93, 80, 97, 0.7);
+  text-align: justify;
+
+}

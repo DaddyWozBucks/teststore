@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'home#index'
+   get '/account' => "users#show"
    resources :videos, only: [:index, :show, :create, :new, :destroy]
    resources :photos, only: [:index, :show, :create, :new, :destroy]
    resources :audios, only: [:index, :show, :create, :new, :destroy]
