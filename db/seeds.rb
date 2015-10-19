@@ -6,9 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Photo.destroy_all
+Audio.destroy_all
+Video.destroy_all
 
+audios = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]
+videos = ["03","04","05","06","07","08","09","10"]
 Photo.create!(
   title: "Photo1",
+  user_id: "1",
   description: "Photo 1 lorem lorem ipsum something text filling space words something happened here blah bolloals ",
   price: 3.99,
   downloads: 0,
@@ -187,3 +192,27 @@ Photo.create!(
   url: "https://s3.eu-central-1.amazonaws.com/elasticbeanstalk-eu-central-1-037922347252/teststore/devresources/images/image19.jpg",
   tags: ""
 )
+
+audios.each do |a|
+    Audio.create!(
+      title: "Audio" + a,
+      description: "Audio" + a + " was recorded wahwahwah lorem lorem ipsum something text filling space words something happened here blah bolloals ",
+      price: 3.99,
+      downloads: 0,
+      rating: 0,
+      url: "https://s3.eu-central-1.amazonaws.com/elasticbeanstalk-eu-central-1-037922347252/teststore/devresources/audio/audio" + a + ".mp3",
+      tags: ""
+    )
+end
+
+videos.each do |v|
+    Audio.create!(
+      title: "Video" + v,
+      description: "Video" + v + " was recorded wahwahwah lorem lorem ipsum something text filling space words something happened here blah bolloals ",
+      price: 3.99,
+      downloads: 0,
+      rating: 0,
+      url: "https://s3.eu-central-1.amazonaws.com/elasticbeanstalk-eu-central-1-037922347252/teststore/devresources/video/MOV_00" + v + ".mp4",
+      tags: ""
+    )
+end

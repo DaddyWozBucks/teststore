@@ -7,17 +7,20 @@
   			<!-- front content -->
         <span class="badge"><%= p.rating%></span>
   		</div>
-  		<div class="photoback">
-        <div class="photobox__title">
-          <%= p.title %>
-        </div>
-        <div class="photobox__description">
-          <%= p.description %>
-        </div>
-        <div class="btn btn-success photobox__price" id="<%= p.id%>">
-            <%= p.price %>
-        </div>
+  		<div class="photoback" style="background-image: url(<%=p.url%>)">
+        <div class="photoback__transparent">
 
+          <div class="photobox__title">
+            <%= p.title %>
+          </div>
+          <div class="badges">
+            Downloads: <span class="badge"> <%= p.downloads%> </span> </br>
+              Rating:<span class="badge"> <%= p.rating%> %</span></br>
+              Price: <span class="badge"> € <%= p.price%> </span></br>
+          </div>
+          <%=link_to "More...", photo_path(p.id), class: "btn btn-default btn-lg btn-block" %>
+
+        </div>
   		</div>
   	</div>
   </div>

@@ -15,8 +15,9 @@
 .photobox__title {
   font-size: 2rem;
   text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font: white 1.5em;
 }
 .photobox__description {
   margin-left: 1rem;
@@ -68,7 +69,59 @@
 /* back, initially hidden pane */
 .photoback {
 	transform: rotateY(180deg);
-  background-color: rgba(93, 80, 97, 0.7);
-  text-align: justify;
 
+  text-align: justify;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+.photoback__transparent{
+  background-color: transparentize(white, .3);
+  height: inherit;
+  width: inherit;
+}
+.photocontent{
+  max-width: 80%;
+  margin: auto;
+  background: linear-gradient(to bottom right, white, white 20%, rgba(255,0,0,0));
+  border-radius: 10px;
+
+}
+.photodiv{
+  height: auto;
+  max-height: 600px;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 2em;
+  border-radius: 5px;
+}
+.photocontent__text{
+
+}
+.photocontent__title {
+
+}
+.photocontent__title {
+
+}
+.photoimg{
+  width:inherit;
+  height: auto;
+}
+.morebtn{
+  width: 6em;
+  height: 3em;
+  background-color: white;
+  text-align: center;
+  width: 100%;
+
+}
+.badges {
+  margin-left: 3em;
+  margin-top: 1em;
+}
+.btnholder {
+  width: inherit;
+  text-align: center;
 }

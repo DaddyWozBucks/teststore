@@ -19,7 +19,7 @@
 
         <% @photos.each do |p| %>
           <%= render partial: "carouselcard", locals: { p: p} %>
-          
+
         <% end %>
       </div>
 
@@ -32,7 +32,28 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-      </div>
+  </div>
+
+  <div class="col-md-4">
+    <h3>Popular Videos</h3>
+    <% @popularvids.each do |v| %>
+      <%= render partial: "videos/popularvids", locals: {p: p} %>
+    <% end %>
+  </div>
+
+  <div class="col-md-4">
+    <h3>Popular Photos</h3>
+    <% @popularpics.each do |pp| %>
+      <%= render partial: "photos/popularpics", locals: {pp: pp} %>
+    <% end %>
+
+  </div>
+  <div class="col-md-4">
+    <h4>Popular Audio</h4>
+    <% @popularaudio.each do |a| %>
+      <%= render partial: "audio/popularaudio", locals: {a: a} %>
+    <% end %>
+  </div>
   <% else %>
       <div class="jumbotron">
         <%= link_to "Sign In", new_user_session_path %>

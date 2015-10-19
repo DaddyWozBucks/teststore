@@ -1,3 +1,14 @@
-<div class="">
+<div class="photocontent col-md-12">
+  <div class="photodiv" >
+      <img src="<%=@photo.url%>" class="photoimg" alt="" />
+  </div>
+  <div class="photocontent__text">
 
+  <div class="photocontent__title">
+     <h3><%= @photo.title %> <small> by  <%= @picowner.first_name %> <%= @picowner.last_name %></small></h3>
+  </div>
+  <div class="photocontent__desc">
+     <h3><%= @photo.description%></h3>
+  </div>
+  </div>
 </div>

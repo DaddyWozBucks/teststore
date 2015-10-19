@@ -18,6 +18,7 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find_by_id(params[:id])
+    @picowner = User.find_by_id(@photo.user_id)
   end
 
   private

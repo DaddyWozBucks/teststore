@@ -1,0 +1,24 @@
+<div class="col-md-2">
+
+    <div class="popflip-container" ontouchstart="this.classList.toggle('hover');">
+    	<div class="popflipper">
+          <video src="<%=v.url%>#t=2,4" class="popfront" autoplay >
+              <span class="badge"><%= v.rating%></span>
+          </video>
+    		<div class="popback">
+          <div class="popbox__title">
+            <%= v.title %>
+          </div>
+          <div class="popbox__description">
+            <%= v.description %>
+          </div>
+          <div class="btn btn-success popbox__price" id="<%= v.id%>">
+              <%= v.price %>
+          </div>
+
+    		</div>
+    	</div>
+    </div>
+
+
+</div>

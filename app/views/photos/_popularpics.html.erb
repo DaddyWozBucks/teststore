@@ -1,0 +1,24 @@
+<div class="">
+
+    <div class="popflip-container" ontouchstart="this.classList.toggle('hover');">
+    	<div class="popflipper">
+    		<div class="popfront" style="background-image: url(<%=pp.url%>)">
+    			<!-- front content -->
+          <span class="badge"><%= pp.rating%></span>
+    		</div>
+    		<div class="popback">
+          <div class="popbox__title">
+            <h4><%= pp.title %></h4>
+          </div>
+          <%=link_to "More...", photo_path(pp.id), class: "btn btn-default" %> 
+          <div class="btn btn-success popbox__price" id="<%= pp.id%>">
+              <%= pp.price %>
+          </div>
+
+    		</div>
+    	</div>
+    </div>
+
+
+
+</div>
