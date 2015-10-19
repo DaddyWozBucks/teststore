@@ -13,9 +13,11 @@ class PhotosController < ApplicationController
   def index
     @photos = Photo.all
     @userphotos = Photo.find_by(id: current_user.id)
+    @popular = Photo.order(rating: :desc).limit(10)
   end
 
   def show
+    @photo = Photo.find_by_id(params[:id])
   end
 
   private
