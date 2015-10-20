@@ -18,6 +18,8 @@
               Rating:<span class="badge"> <%= p.rating%> %</span></br>
               Price: <span class="badge"> € <%= p.price%> </span></br>
           </div>
+          <%= content_tag :div, class: ["photodata", "hidden"], data: {results: p} do %>
+          <% end %>
           <%=link_to "More...", photo_path(p.id), class: "btn btn-default btn-lg btn-block" %>
 
         </div>

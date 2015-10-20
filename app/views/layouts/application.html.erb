@@ -3,8 +3,8 @@
 <head>
   <title>Teststore</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +22,8 @@
         <li class="nav-item"><a href="<%=videos_path%>">Video</a></li>
         <li class="nav-item"><a href="<%=photos_path%>">Photos</a></li>
         <li class="nav-item"><a href="<%=audios_path%>">Blog</a></li>
-        <li class="nav-item"><a href="<%=account_path%>">Account</a></li>
+        <li class="nav-item"><a href="<%=user_path(current_user.id)%>">Account</a></li>
+        <li class="nav-item"><%=link_to "Log Out", destroy_user_session_path, :method => :delete%></li>
       </ul>
   <% else %>
     <ul class="navigation">
@@ -32,7 +33,7 @@
       <li class="nav-item disabled"><a href="<%=videos_path%>">Video</a></li>
       <li class="nav-item disabled"><a href="<%=photos_path%>">Photos</a></li>
       <li class="nav-item disabled"><a href="<%=audios_path%>">Blog</a></li>
-      <li class="nav-item disabled"><a href="<%=account_path%>">Account</a></li>
+      <li class="nav-item disabled"><a href="">Account</a></li>
     </ul>
   <% end %>
 

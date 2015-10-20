@@ -15,7 +15,8 @@
           <div class="btn btn-success popbox__price" id="<%= v.id%>">
               <%= v.price %>
           </div>
-
+          <%= content_tag :div, class: ["viditemdata", "hidden"], data: {results: v} do %>
+          <% end %>
     		</div>
     	</div>
     </div>

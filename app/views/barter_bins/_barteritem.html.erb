@@ -1,0 +1,29 @@
+<div class="">
+
+
+  <div class="barterflip-container" ontouchstart="this.classList.toggle('hover');">
+  	<div class="barterflipper">
+  		<div class="barterfront" style="background-image: url(<%=b.url%>)">
+  			<!-- front content -->
+        <span class="badge"><%= b.rating%></span>
+  		</div>
+  		<div class="barterback" style="background-image: url(<%=b.url%>)">
+        <div class="barterback__transparent">
+
+          <div class="barterbox__title">
+            <%= b.title %>
+          </div>
+          <div class="badges">
+            Downloads: <span class="badge"> <%= b.downloads%> </span> </br>
+            Rating:<span class="badge"> <%= b.rating%> %</span></br>
+
+          </div>
+          <%= content_tag :div, class: ["itemdata", "hidden"], data: {results: b} do %>
+          <% end %>
+          <%=link_to "More...", barter_bins_path(b.id), class: "btn btn-default btn-lg btn-block" %>
+
+        </div>
+  		</div>
+  	</div>
+  </div>
+</div>

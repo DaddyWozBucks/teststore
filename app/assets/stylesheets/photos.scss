@@ -100,9 +100,9 @@
 
 }
 .photocontent__title {
-
+  text-align: center;
 }
-.photocontent__title {
+.photocontent__desc {
 
 }
 .photoimg{
@@ -124,4 +124,8 @@
 .btnholder {
   width: inherit;
   text-align: center;
+}
+#phototitle{
+  background-size: contain;
+  background-repeat: no-repeat;
 }

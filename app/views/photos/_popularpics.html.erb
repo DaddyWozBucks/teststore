@@ -10,10 +10,12 @@
           <div class="popbox__title">
             <h4><%= pp.title %></h4>
           </div>
-          <%=link_to "More...", photo_path(pp.id), class: "btn btn-default" %> 
+          <%=link_to "More...", photo_path(pp.id), class: "btn btn-default" %>
           <div class="btn btn-success popbox__price" id="<%= pp.id%>">
               <%= pp.price %>
           </div>
+          <%= content_tag :div, class: ["popitemdata", "hidden"], data: {results: pp} do %>
+          <% end %>
 
     		</div>
     	</div>

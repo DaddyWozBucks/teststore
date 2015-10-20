@@ -3,21 +3,22 @@
 
   <div class="photoflip-container" ontouchstart="this.classList.toggle('hover');">
   	<div class="photoflipper">
-  		<div class="photofront" style="background-image: url(<%=p.url%>)">
+  		<div class="photofront" style="background-image: url(<%=a.url%>)">
   			<!-- front content -->
-        <span class="badge"><%= p.rating%></span>
+        <span class="badge"><%= a.rating%></span>
   		</div>
   		<div class="photoback">
         <div class="photobox__title">
-          <%= p.title %>
+          <%= a.title %>
         </div>
         <div class="photobox__description">
-          <%= p.description %>
+          <%= a.description %>
         </div>
-        <div class="btn btn-success photobox__price" id="<%= p.id%>">
-            <%= p.price %>
+        <div class="btn btn-success photobox__price" id="<%= a.id%>">
+            <%= a.price %>
         </div>
-
+        <%= content_tag :div, class: ["itemdata", "hidden"], data: {results: a} do %>
+        <% end %>
   		</div>
   	</div>
   </div>

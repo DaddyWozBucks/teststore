@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151019133245) do
+ActiveRecord::Schema.define(version: 20151020100146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +23,30 @@ ActiveRecord::Schema.define(version: 20151019133245) do
     t.decimal  "price",       precision: 5, scale: 2
     t.string   "url"
     t.string   "tags"
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
     t.integer  "downloads",                           default: 0
     t.integer  "rating",                              default: 0
+    t.boolean  "barterbin",                           default: false
+  end
+
+  create_table "barter_bins", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "downloads"
+    t.integer  "rating"
+    t.string   "tags"
+    t.integer  "user_id"
+    t.string   "url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "item_ids",   default: [],              array: true
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "photos", force: :cascade do |t|
@@ -36,10 +56,11 @@ ActiveRecord::Schema.define(version: 20151019133245) do
     t.decimal  "price",       precision: 5, scale: 2
     t.string   "url"
     t.string   "tags"
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
     t.integer  "downloads",                           default: 0
     t.integer  "rating",                              default: 0
+    t.boolean  "barterbin",                           default: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,6 +81,7 @@ ActiveRecord::Schema.define(version: 20151019133245) do
     t.string   "photourl"
     t.string   "first_name"
     t.string   "last_name"
+    t.text     "barterbin_ids",                                  default: [],              array: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -72,10 +94,11 @@ ActiveRecord::Schema.define(version: 20151019133245) do
     t.decimal  "price",       precision: 5, scale: 2
     t.string   "url"
     t.string   "tags"
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
     t.integer  "downloads",                           default: 0
     t.integer  "rating",                              default: 0
+    t.boolean  "barterbin",                           default: false
   end
 
 end
